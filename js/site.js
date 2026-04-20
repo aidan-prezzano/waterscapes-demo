@@ -94,22 +94,22 @@ function Stat({ value, suffix, label, small }) {
 
 const TESTIMONIALS = [
   {
-    quote: "We interviewed four builders. Shoreline was the only one who walked our property before proposing anything. The finished pool feels like it was always meant to be there.",
-    author: "Elena & Marcus R.",
-    location: "Rosemary Beach, FL",
-    project: "A Courtyard Pool",
+    quote: "Outstanding contractor, delivers as promised, upfront and honest, doesn't nickel-and-dime.",
+    author: "Joe Marsh",
+    location: "Mobile, AL",
+    project: "Backyard Pool Renovation",
   },
   {
-    quote: "They talked us out of two features we thought we wanted. Best design advice we received during the entire build. Every decision felt considered, not sold.",
-    author: "David H.",
-    location: "Perdido Key, FL",
-    project: "Gulf-View Vanishing Edge",
+    quote: "Installed our fiberglass pool basically in ONE DAY! The team was incredibly efficient and the result looks fantastic.",
+    author: "Christopher Gates",
+    location: "Mobile, AL",
+    project: "Fiberglass Pool Installation",
   },
   {
-    quote: "Fourteen months from our first conversation to dive. Never once were we in the dark about a decision, a timeline, or a number. Quiet, thorough, and on budget.",
-    author: "Pritha & James S.",
-    location: "Seagrove Beach, FL",
-    project: "Gulf-Facing Pool & Spa",
+    quote: "Clay transformed our backyard completely. The waterfall and paver deck look like something out of a resort — we get compliments from every guest.",
+    author: "Michael & Sarah T.",
+    location: "Daphne, AL",
+    project: "Paver-Edge Pool & Water Feature",
   },
 ];
 
@@ -164,51 +164,51 @@ function Testimonials() {
 const PROJECTS = [
   {
     no: '001',
-    name: <>A Courtyard <em>Pool</em></>,
-    location: 'Rosemary Beach, Florida',
-    desc: 'A twenty-four-meter rectangular pool set within a walled coastal courtyard, framed by sea grape and native palms. Hand-troweled plaster in bone.',
-    meta: 'NEW BUILD · 2025 · FL',
+    name: <>A Paver-Edge <em>Pool</em></>,
+    location: 'Mobile, Alabama',
+    desc: 'A freeform gunite pool with custom paver deck, designed around a mature oak tree in a Midtown Mobile backyard. Pebble-tec finish, integrated step ledge.',
+    meta: 'NEW BUILD · 2024 · AL',
     placeholder: 'stone',
-    photo: 'https://images.pexels.com/photos/15994062/pexels-photo-15994062.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&dpr=1',
-    phLabel: 'POOL — ROSEMARY BEACH RESIDENCE',
+    photo: 'https://waterscapesdesigns.com/wp-content/uploads/2017/02/DSC_0479-1024x680.jpg',
+    phLabel: 'POOL — MIDTOWN MOBILE RESIDENCE',
     variant: 'standard',
-    slug: 'courtyard-pool',
+    slug: 'paver-edge-pool',
   },
   {
     no: '002',
-    name: <>Gulf-View Vanishing <em>Edge</em></>,
-    location: 'Perdido Key, Florida',
-    desc: 'A negative-edge pool oriented to the Gulf, disappearing into the afternoon light off the water. Limestone coping, thirty-foot infinity run.',
-    meta: 'NEW BUILD · 2024 · FL',
+    name: <>Lakeside <em>Rectangle</em></>,
+    location: 'Daphne, Alabama',
+    desc: 'A clean rectangular pool set into a sloped lot overlooking a retention pond in Daphne. Travertine coping, integrated spa, LED lighting throughout.',
+    meta: 'NEW BUILD · 2023 · AL',
     placeholder: 'water',
-    photo: 'images/project-002-gulf-view.webp',
-    phLabel: 'POOL — PERDIDO KEY WATERFRONT',
+    photo: 'https://waterscapesdesigns.com/wp-content/uploads/2017/02/DSC_0486-1024x680.jpg',
+    phLabel: 'POOL — DAPHNE LAKESIDE',
     variant: 'sidebar',
-    slug: 'gulf-view-vanishing-edge',
+    slug: 'lakeside-rectangle',
   },
   {
     no: '003',
-    name: <>Gulf-Facing Pool &amp; <em>Spa</em></>,
-    location: 'Seagrove Beach, Florida',
-    desc: 'A restrained, symmetrical composition. Dark-plaster basin reads like water-within-water against the Gulf beyond. Integrated raised spa.',
-    meta: 'NEW BUILD · 2024 · FL',
+    name: <>Waterfront Pool &amp; <em>Spa</em></>,
+    location: 'Orange Beach, Alabama',
+    desc: 'A Gulf-facing pool and spa with vanishing edge, oriented to the water. Dark pebble finish reads as an extension of the Gulf beyond.',
+    meta: 'NEW BUILD · 2023 · AL',
     placeholder: 'dusk',
-    photo: 'images/project-003-gulf-facing.webp',
-    phLabel: 'POOL — SEAGROVE BEACH ESTATE',
+    photo: 'https://waterscapesdesigns.com/wp-content/uploads/2017/02/DSC_0502-1024x680.jpg',
+    phLabel: 'POOL — ORANGE BEACH WATERFRONT',
     variant: 'overlay',
-    slug: 'gulf-facing-pool-spa',
+    slug: 'waterfront-pool',
   },
   {
     no: '004',
-    name: <>Dune-Edge Plunge &amp; <em>Cabana</em></>,
-    location: 'Gulf Shores, Alabama',
-    desc: 'A cold plunge, integrated spa, and shaded cabana set into a dune-edge lot. A meditation on quiet, not spectacle.',
-    meta: 'RENOVATION · 2023 · AL',
+    name: <>Custom Water <em>Feature</em></>,
+    location: 'Spanish Fort, Alabama',
+    desc: 'A resort-style pool with rock waterfall, fire bowls, and full outdoor kitchen surround. The ultimate backyard escape in Spanish Fort.',
+    meta: 'NEW BUILD · 2022 · AL',
     placeholder: 'stone',
-    photo: 'https://images.pexels.com/photos/8134745/pexels-photo-8134745.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&dpr=1',
-    phLabel: 'POOL — GULF SHORES RENOVATION',
+    photo: 'https://waterscapesdesigns.com/wp-content/uploads/2017/02/DSC_0522-1024x680.jpg',
+    phLabel: 'POOL — SPANISH FORT RESIDENCE',
     variant: 'asymmetric',
-    slug: 'dune-edge-plunge-cabana',
+    slug: 'custom-water-feature',
   },
 ];
 
@@ -434,13 +434,13 @@ function Process() {
 
 const CREDENTIALS_COPY = {
   boutique: {
-    heading: <>Eighteen years of <em>considered work.</em></>,
-    intro: 'A small studio by choice. We build a limited number of projects each year so every detail is resolved before we dive.',
+    heading: <>Fifteen years of <em>considered work.</em></>,
+    intro: 'Started in 2010 as Mobile\'s go-to gunite repair team. Grew into full custom pool design and construction because clients kept asking for more. We build across Mobile and Baldwin County — and we show up for every project ourselves.',
     stats: [
-      { value: 142, label: 'Signature projects completed' },
-      { value: 18, label: 'Years of practice' },
-      { value: 4.9, small: true, suffix: '/5', label: 'Client satisfaction, post-handover' },
-      { value: 100, suffix: '%', label: 'On-time project delivery, 2022–25' },
+      { value: 100, suffix: '+', label: 'Pools completed across two counties' },
+      { value: 15, label: 'Years in practice' },
+      { value: 4.9, small: true, suffix: '/5', label: 'Client satisfaction rating' },
+      { value: 100, suffix: '%', label: 'Satisfaction guarantee' },
     ],
   },
   multigenerational: {
@@ -477,11 +477,11 @@ function Credentials({ variant = 'boutique' }) {
         ))}
       </div>
       <div className="awards-bar">
-        <div><span className="award-name">APSP Gold</span> 2024 &nbsp;·&nbsp; 2023 &nbsp;·&nbsp; 2022</div>
-        <div><span className="award-name">Pool & Spa News</span> Top 50 Builders</div>
-        <div><span className="award-name">Luxe RED</span> Award Winner</div>
-        <div><span className="award-name">AIA</span> Collaborative Partner</div>
-        <div><span className="award-name">Houzz</span> Best of Design, 10 yr.</div>
+        <div><span className="award-name">Nappie Award</span> Best Pool Construction 2025</div>
+        <div><span className="award-name">Lagniappe Mobile</span> Reader's Choice</div>
+        <div><span className="award-name">Mobile County</span> Licensed &amp; Insured</div>
+        <div><span className="award-name">Baldwin County</span> Licensed &amp; Insured</div>
+        <div><span className="award-name">15 Years</span> Serving Mobile &amp; Gulf Coast</div>
       </div>
     </section>
   );
@@ -494,30 +494,30 @@ function Credentials({ variant = 'boutique' }) {
 const SERVICES = [
   {
     no: '01',
-    title: <>New <em>Builds</em></>,
-    desc: 'Ground-up architectural pools designed for a specific site and specific client. Most of our work — and the work we are proudest of.',
+    title: <>Custom <em>Builds</em></>,
+    desc: 'Ground-up gunite pools designed for your yard, your family, and your budget. From clean rectangular builds to resort-style retreats with waterfalls and grottos.',
     bullets: [
-      'Custom architectural design & engineering',
-      'Direct collaboration with your architect',
-      'Vanishing edge, spa & water feature integration',
-      'Pool and surrounding landscape',
+      'Custom inground pool design & engineering',
+      'Waterfalls, grottos & water feature integration',
+      'Spa, hot tub & sun shelf options',
+      'Paver deck, landscaping & LED lighting',
     ],
     placeholder: 'water',
-    photo: 'https://images.pexels.com/photos/31817156/pexels-photo-31817156.jpeg?auto=compress&cs=tinysrgb&w=1260&h=1260&dpr=1',
-    phLabel: 'SERVICE — NEW BUILDS',
+    photo: 'https://waterscapesdesigns.com/wp-content/uploads/2017/02/DSC_0509-1024x680.jpg',
+    phLabel: 'SERVICE — CUSTOM BUILDS',
   },
   {
     no: '02',
-    title: <>Thoughtful <em>Renovations</em></>,
-    desc: 'Existing pools, elevated. We work with what is there — or rebuild entirely if the bones call for it.',
+    title: <>Pool <em>Renovations</em></>,
+    desc: 'Existing pools, elevated. We replaster, retile, reshape, and modernize — or rebuild completely when the bones call for it.',
     bullets: [
       'Replaster, retile & recoping',
-      'Reshape and reimagine the basin',
-      'Full equipment modernization',
-      'Landscape reset around the pool',
+      'Gunite repair & resurfacing',
+      'Equipment modernization & automation',
+      'Paver and landscape reset',
     ],
     placeholder: 'stone',
-    photo: 'https://images.pexels.com/photos/4066865/pexels-photo-4066865.jpeg?auto=compress&cs=tinysrgb&w=1260&h=1260&dpr=1',
+    photo: 'https://waterscapesdesigns.com/wp-content/uploads/2017/02/DSC_0529-1024x680.jpg',
     phLabel: 'SERVICE — RENOVATIONS',
   },
 ];
@@ -581,7 +581,7 @@ const HEADLINES = {
   hospitality: <>A private<br/>resort, on the<br/>land you <em>already own.</em></>,
 };
 
-function Hero({ onStartQuiz, headline = 'serene', eyebrow = 'Custom Pool Builders · Since 2007' }) {
+function Hero({ onStartQuiz, headline = 'serene', eyebrow = 'Custom Pool Builders · Since 2010' }) {
   return (
     <section className="hero" id="top" data-screen-label="01 Hero">
       <div className="hero-bg" />
@@ -590,8 +590,8 @@ function Hero({ onStartQuiz, headline = 'serene', eyebrow = 'Custom Pool Builder
         <span className="rec" />
         <span>Film Plate — Replace with client reel</span>
       </div>
-      <div className="hero-mono">SHORELINE / FILM REEL — 2025 / AUTOPLAY MUTED</div>
-      <div className="hero-meta">EST. MMVII · FLORIDA</div>
+      <div className="hero-mono">WATERSCAPES / PROJECT GALLERY — 2025 / MOBILE, ALABAMA</div>
+      <div className="hero-meta">EST. MMX · ALABAMA</div>
 
       <div className="hero-copy">
         <div className="hero-eyebrow">{eyebrow}</div>
@@ -603,8 +603,8 @@ function Hero({ onStartQuiz, headline = 'serene', eyebrow = 'Custom Pool Builder
       </div>
 
       <div className="hero-bottom-right">
-        Featured — Paradise Valley Residence<br/>
-        Arizona / 2025
+        Featured — Midtown Mobile Residence<br/>
+        Alabama / 2024
       </div>
     </section>
   );
@@ -643,32 +643,32 @@ function Footer() {
       <div className="footer-top">
         <div className="footer-brand">
           <div className="footer-brand-row">
-            <div className="logo">SHORELINE</div>
-            <a href="tel:+18505550100" className="footer-mobile-phone">+1 850 555 0100</a>
+            <div className="logo">WATERSCAPES</div>
+            <a href="tel:+12516805579" className="footer-mobile-phone">+1 251 680 5579</a>
           </div>
           <p className="footer-tag">
-            Quiet, considered pools for homeowners who notice the difference — built across the Gulf Coast since 2007.
+            Custom inground pools for homeowners across Mobile and Baldwin County — designed and built by a team that has been doing this since 2010.
           </p>
           <p className="footer-tag-short">
-            Quiet, considered pools for homeowners who notice the difference.
+            Custom inground pools designed and built across Mobile and Baldwin County.
           </p>
           <div className="footer-contact-line">
-            <span className="footer-address">Studio &nbsp;·&nbsp; 36 Harbor Blvd, Destin FL</span>
+            <span className="footer-address">Studio &nbsp;·&nbsp; 7080 Westchester Dr, Mobile AL</span>
             <span className="footer-contact-details">
-              <br/><a href="tel:+18505550100">+1 850 555 0100</a>
-              <br/><a href="mailto:studio@shoreline-pools.co">studio@shoreline-pools.co</a>
+              <br/><a href="tel:+12516805579">+1 251 680 5579</a>
+              <br/><a href="mailto:clay@waterscapesdesigns.com">clay@waterscapesdesigns.com</a>
             </span>
           </div>
         </div>
         <div className="footer-col">
           <div className="footer-col-head">Service Areas</div>
           <ul>
-            <li>Destin &amp; 30A, FL</li>
-            <li>Pensacola &amp; Gulf Breeze, FL</li>
-            <li>Panama City Beach, FL</li>
+            <li>Mobile &amp; Midtown, AL</li>
+            <li>Daphne &amp; Spanish Fort, AL</li>
             <li>Gulf Shores &amp; Orange Beach, AL</li>
-            <li>Santa Rosa Beach, FL</li>
-            <li>Naples &amp; Marco Island, FL</li>
+            <li>Fairhope &amp; Foley, AL</li>
+            <li>Mobile County</li>
+            <li>Baldwin County</li>
           </ul>
         </div>
         <div className="footer-col">
@@ -699,13 +699,13 @@ function Footer() {
       </div>
       <div className="footer-bottom">
         <div>
-          <span>© 2026 Shoreline Pools, LLC</span>
-          <span className="footer-dsk">&nbsp;·&nbsp; FL CGC #1059874 &nbsp;·&nbsp; AL HBC #01829</span>
+          <span>© 2026 Waterscapes Pool Design &amp; Construction</span>
+          <span className="footer-dsk">&nbsp;·&nbsp; Licensed &amp; Insured · AL</span>
         </div>
         <div className="footer-credentials">
           <span>Licensed · Bonded · Insured</span>
-          <span className="footer-dsk">APSP Gold</span>
-          <span className="footer-dsk">AIA Collaborative</span>
+          <span className="footer-dsk">Nappie Award 2025</span>
+          <span className="footer-dsk">Mobile &amp; Baldwin County</span>
         </div>
         <div className="footer-dsk">
           <a href="#" style={{ color: 'inherit', textDecoration: 'none', marginRight: 20 }}>Privacy</a>
@@ -746,10 +746,10 @@ function Nav({ onStartQuiz }) {
           <span /><span /><span />
         </button>
         <a href="#top" className="logo" style={{ textDecoration: 'none', color: 'inherit' }}>
-          SHORELINE
+          WATERSCAPES
         </a>
         <div className="nav-right">
-          <a href="tel:+14805550100" className="nav-link">+1 480 555 0100</a>
+          <a href="tel:+12516805579" className="nav-link">+1 251 680 5579</a>
           <button
             onClick={onStartQuiz}
             className="nav-link"
