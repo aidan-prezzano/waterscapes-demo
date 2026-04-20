@@ -25,24 +25,24 @@ const QUIZ_STEPS = [
     placeholder: 'water',
     placeholderLabel: 'PROPERTY — SITE STUDY',
     options: [
-      { value: 'private', label: 'Private residence', sub: 'Primary home' },
-      { value: 'estate', label: 'Estate / second home', sub: 'Multi-acre property' },
-      { value: 'new', label: 'New construction', sub: 'Building from the ground' },
-      { value: 'commercial', label: 'Commercial / hospitality', sub: 'Hotel, club, resort' },
+      { value: 'primary', label: 'Primary residence', sub: 'Your everyday home' },
+      { value: 'waterfront', label: 'Waterfront / lakeside lot', sub: 'Bay, river, or lake view' },
+      { value: 'acreage', label: 'Acreage or rural property', sub: 'Room to spread out' },
+      { value: 'newbuild', label: 'New home under construction', sub: 'Pool coordinated with build' },
     ],
   },
   {
     key: 'scope',
     eyebrow: 'Step 02 — Scope',
     question: <>What kind of project are you <em>considering?</em></>,
-    helper: 'We work in three modes. Tell us which fits.',
+    helper: 'We build new and we renovate existing. Tell us which fits.',
     placeholder: 'stone',
     placeholderLabel: 'SCOPE — STUDIES',
     options: [
-      { value: 'newbuild', label: 'A new pool', sub: 'Designed from scratch' },
-      { value: 'reno', label: 'Renovation of an existing pool', sub: 'Refinish, reshape, modernize' },
-      { value: 'complete', label: 'Pool + landscape + outdoor living', sub: 'Full environment' },
-      { value: 'unsure', label: 'Not yet decided', sub: 'Still exploring' },
+      { value: 'newbuild', label: 'A new pool from the ground up', sub: 'Gunite or vinyl liner' },
+      { value: 'reno', label: 'Renovating an existing pool', sub: 'Replaster, retile, reshape' },
+      { value: 'feature', label: 'Adding a water feature', sub: 'Waterfall, grotto, spa tie-in' },
+      { value: 'unsure', label: 'Not yet decided', sub: 'Still exploring options' },
     ],
   },
   {
@@ -53,10 +53,10 @@ const QUIZ_STEPS = [
     placeholder: 'dusk',
     placeholderLabel: 'FORM — REFERENCES',
     options: [
-      { value: 'modern', label: 'Architectural & modern', sub: 'Clean lines, rectilinear, stone' },
-      { value: 'natural', label: 'Naturalistic / organic', sub: 'Boulder, softer edges, landscape-driven' },
-      { value: 'classical', label: 'Classical / formal', sub: 'Symmetry, traditional detailing' },
-      { value: 'resort', label: 'Resort-inspired', sub: 'Vanishing edge, beach entry, spa' },
+      { value: 'clean', label: 'Clean rectangle', sub: 'Simple, rectilinear, lap-friendly' },
+      { value: 'family', label: 'Family backyard', sub: 'Diving board, safety fence, durable' },
+      { value: 'resort', label: 'Resort-style Gulf Coast', sub: 'Waterfall, grotto, tanning ledge' },
+      { value: 'naturalistic', label: 'Naturalistic / organic', sub: 'Stone, softer edges, landscape-driven' },
     ],
   },
   {
@@ -68,21 +68,21 @@ const QUIZ_STEPS = [
     placeholderLabel: 'FEATURES — DETAIL STUDIES',
     multi: true,
     options: [
-      { value: 'vanishing', label: 'Vanishing edge', sub: 'Horizon-blurring water' },
-      { value: 'spa', label: 'Integrated spa', sub: 'Raised or flush' },
-      { value: 'automation', label: 'Smart automation', sub: 'App control, scenes' },
-      { value: 'waterfeatures', label: 'Scuppers, fire, fountains', sub: 'Water and fire detail' },
-      { value: 'lighting', label: 'Curated lighting', sub: 'Dusk-to-dawn presence' },
-      { value: 'cabana', label: 'Cabana / outdoor room', sub: 'Shade, kitchen, lounge' },
-      { value: 'cover', label: 'Automated cover', sub: 'Safety and efficiency' },
-      { value: 'plunge', label: 'Cold plunge', sub: 'Paired with the spa' },
+      { value: 'diving', label: 'Diving board', sub: 'Concrete-anchored, depth-rated' },
+      { value: 'spa', label: 'Attached spa / hot tub', sub: 'Raised or flush' },
+      { value: 'waterfall', label: 'Waterfall or grotto', sub: 'Stone wall with cascade' },
+      { value: 'ledge', label: 'Tanning ledge / sun shelf', sub: 'Shallow lounging step' },
+      { value: 'paver', label: 'Paver deck', sub: 'Stone or travertine coping' },
+      { value: 'lighting', label: 'LED pool & landscape lighting', sub: 'Dusk presence' },
+      { value: 'automation', label: 'Variable-speed & automation', sub: 'App control, scheduling' },
+      { value: 'fence', label: 'Safety fence', sub: 'Aluminum, full perimeter' },
     ],
   },
   {
     key: 'timeline',
     eyebrow: 'Step 05 — Timing',
     question: <>When do you imagine <em>breaking ground?</em></>,
-    helper: 'Waterscapes projects typically take 6–12 months from discovery to first swim.',
+    helper: 'Waterscapes projects typically take 4–6 months from permit to first swim.',
     placeholder: 'stone',
     placeholderLabel: 'TIMELINE — STUDIES',
     options: [
@@ -113,10 +113,10 @@ const QUIZ_STEPS = [
 ];
 
 const BUDGET_TIERS = [
-  { min: 50, label: '$50k — $95k', tier: 'Essential', note: 'Refined fundamentals, quality materials.' },
-  { min: 95, label: '$95k — $150k', tier: 'Considered', note: 'Bespoke form, custom details.' },
-  { min: 150, label: '$150k — $250k', tier: 'Signature', note: 'Full architectural integration, premium finishes.' },
-  { min: 250, label: '$250k+', tier: 'Estate', note: 'No-compromise design. Often includes landscape.' },
+  { min: 40, label: '$40k — $65k', tier: 'Liner', note: 'Vinyl liner pool, built right — our bread and butter.' },
+  { min: 65, label: '$65k — $95k', tier: 'Gunite', note: 'Custom-shaped concrete pool with paver deck.' },
+  { min: 95, label: '$95k — $140k', tier: 'Signature', note: 'Gunite with spa, water feature, or premium finishes.' },
+  { min: 140, label: '$140k+', tier: 'Resort', note: 'Full outdoor environment — waterfall, grotto, lighting.' },
 ];
 
 function useCountUp(target, active, duration = 1400) {
@@ -137,10 +137,10 @@ function useCountUp(target, active, duration = 1400) {
 }
 
 function BudgetSlider({ value, onChange, isMobile }) {
-  const min = 50, max = 300;
+  const min = 40, max = 180;
   const pct = ((value - min) / (max - min)) * 100;
   const currentTier = [...BUDGET_TIERS].reverse().find(t => value >= t.min) || BUDGET_TIERS[0];
-  const display = value >= 250 ? '$250k+' : `$${Math.round(value)}k`;
+  const display = value >= 140 ? '$140k+' : `$${Math.round(value)}k`;
 
   return (
     <div style={{ width: '100%', maxWidth: 640 }}>
@@ -348,7 +348,7 @@ function QuizOptions({ options, value, onChange, multi, isMobile }) {
 function QuizComplete({ answers, onClose, onReset, isMobile }) {
   const tier = [...BUDGET_TIERS].reverse().find(t => answers.budget >= t.min) || BUDGET_TIERS[0];
   const countVal = useCountUp(answers.budget, true, 1600);
-  const display = countVal >= 250 ? '$250k+' : `$${Math.round(countVal)}k`;
+  const display = countVal >= 140 ? '$140k+' : `$${Math.round(countVal)}k`;
   return (
     <div style={{
       padding: isMobile ? '32px 20px' : '80px 80px',
@@ -449,7 +449,7 @@ function QuizComplete({ answers, onClose, onReset, isMobile }) {
 
 function Quiz({ open, onClose }) {
   const [stepIdx, setStepIdx] = useState(0);
-  const [answers, setAnswers] = useState({ budget: 150, features: [], contact: {} });
+  const [answers, setAnswers] = useState({ budget: 85, features: [], contact: {} });
   const [complete, setComplete] = useState(false);
   const [direction, setDirection] = useState(1);
 
@@ -458,7 +458,7 @@ function Quiz({ open, onClose }) {
       const t = setTimeout(() => {
         setStepIdx(0);
         setComplete(false);
-        setAnswers({ budget: 150, features: [], contact: {} });
+        setAnswers({ budget: 85, features: [], contact: {} });
       }, 500);
       return () => clearTimeout(t);
     }
@@ -511,7 +511,7 @@ function Quiz({ open, onClose }) {
   const reset = () => {
     setStepIdx(0);
     setComplete(false);
-    setAnswers({ budget: 150, features: [], contact: {} });
+    setAnswers({ budget: 85, features: [], contact: {} });
   };
 
   const isMobile = useIsMobile();
