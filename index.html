@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shoreline — Custom Pools</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" />
+<style>
+  @keyframes quiz-enter {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes quiz-img-enter {
+    from { opacity: 0; transform: scale(1.04); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="js/quiz.js"></script>
+<script type="text/babel" src="js/site.js"></script>
+
+<script type="text/babel" data-presets="env,react">
+const { useState, useEffect, useRef } = React;
+const { Nav, Hero, Projects, Process, Testimonials, Credentials, Services, QuizBanner, Footer, useReveal } = window.Site;
+const Quiz = window.Quiz;
+
+/* Default tweak values — edit to set per-client defaults */
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "palette": "warm",
+  "hero": "aman",
+  "projects": "stack",
+  "services": "three-up",
+  "studioScale": "boutique",
+  "headline": "serene"
+}/*EDITMODE-END*/;
+
+function TweaksPanel({ tweaks, setTweak, visible }) {
+  const palettes = [
+    { id: 'warm',       name: 'Warm Sand',  colors: ['#f1ece3', '#8a7354', '#1a1713'] },
+    { id: 'stone',      name: 'Cool Stone', colors: ['#eeede8', '#5e5a52', '#1f1e1b'] },
+    { id: 'sage',       name: 'Sage',       colors: ['#eceee7', '#586864', '#1f2320'] },
+    { id: 'terracotta', name: 'Terracotta', colors: ['#f0e8dc', '#8a5f3c', '#231a10'] },
+  ];
+  return (
+    <div className={`tweaks-panel ${visible ? 'open' : ''}`} style={{ maxHeight: '88vh', overflowY: 'auto' }}>
+      <h4>Tweaks</h4>
+      <div style={{ color: 'var(--mute)', fontFamily: "'Cormorant Garamond', serif", fontSize: 15, fontStyle: 'italic' }}>
+        Template variations
+      </div>
+
+      <div className="tweak-group">
+        <h4>Palette</h4>
+        <div className="swatch-row">
+          {palettes.map(p => (
+            <div
+              key={p.id}
+              className={`swatch ${tweaks.palette === p.id ? 'active' : ''}`}
+              onClick={() => setTweak('palette', p.id)}
+              title={p.name}
+            >
+              <div style={{ display: 'flex', height: '100%' }}>
+                {p.colors.map(c => (
+                  <div key={c} style={{ flex: 1, background: c }} />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div style={{
+          fontSize: 10, letterSpacing: '0.14em', textTransform: 'uppercase',
+          color: 'var(--mute)', marginTop: 10, textAlign: 'center',
+        }}>
+          {palettes.find(p => p.id === tweaks.palette)?.name}
+        </div>
+      </div>
+
+      <div className="tweak-group">
+        <h4>Hero Layout</h4>
+        <div className="variant-row">
+          {[
+            { id: 'aman',     label: 'Aman' },
+            { id: 'centered', label: 'Centered' },
+            { id: 'split',    label: 'Split' },
+          ].map(v => (
+            <button
+              key={v.id}
+              className={tweaks.hero === v.id ? 'active' : ''}
+              onClick={() => setTweak('hero', v.id)}
+            >
+              {v.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="tweak-group">
+        <h4>Headline</h4>
+        <div className="variant-row">
+          {[
+            { id: 'serene',        label: 'Serene' },
+            { id: 'architectural', label: 'Arch.' },
+            { id: 'masculine',     label: 'Built' },
+            { id: 'hospitality',   label: 'Resort' },
+          ].map(v => (
+            <button
+              key={v.id}
+              className={tweaks.headline === v.id ? 'active' : ''}
+              onClick={() => setTweak('headline', v.id)}
+            >
+              {v.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="tweak-group">
+        <h4>Projects Layout</h4>
+        <div className="variant-row">
+          {[
+            { id: 'stack',       label: 'Stack' },
+            { id: 'alternating', label: 'Alt' },
+            { id: 'horizontal',  label: 'Scroll' },
+          ].map(v => (
+            <button
+              key={v.id}
+              className={tweaks.projects === v.id ? 'active' : ''}
+              onClick={() => setTweak('projects', v.id)}
+            >
+              {v.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="tweak-group">
+        <h4>Services Layout</h4>
+        <div className="variant-row">
+          {[
+            { id: 'three-up', label: 'Three' },
+            { id: 'two-up',   label: 'Two' },
+            { id: 'single',   label: 'One' },
+          ].map(v => (
+            <button
+              key={v.id}
+              className={tweaks.services === v.id ? 'active' : ''}
+              onClick={() => setTweak('services', v.id)}
+            >
+              {v.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="tweak-group">
+        <h4>Studio Scale</h4>
+        <div className="variant-row">
+          {[
+            { id: 'boutique',          label: 'Boutique' },
+            { id: 'multigenerational', label: 'Legacy' },
+          ].map(v => (
+            <button
+              key={v.id}
+              className={tweaks.studioScale === v.id ? 'active' : ''}
+              onClick={() => setTweak('studioScale', v.id)}
+            >
+              {v.label}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  const [quizOpen, setQuizOpen] = useState(false);
+  const [tweaks, setTweaks] = useState(TWEAK_DEFAULTS);
+  const [tweaksVisible, setTweaksVisible] = useState(false);
+  const scrollRef = useReveal();
+
+  const setTweak = (k, v) => {
+    const next = { ...tweaks, [k]: v };
+    setTweaks(next);
+    window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { [k]: v } }, '*');
+  };
+
+  useEffect(() => {
+    document.body.dataset.palette = tweaks.palette;
+    document.body.dataset.hero = tweaks.hero;
+    document.body.dataset.projects = tweaks.projects;
+    document.body.dataset.services = tweaks.services;
+  }, [tweaks]);
+
+  useEffect(() => {
+    const onMsg = (e) => {
+      const d = e.data || {};
+      if (d.type === '__activate_edit_mode') setTweaksVisible(true);
+      if (d.type === '__deactivate_edit_mode') setTweaksVisible(false);
+    };
+    window.addEventListener('message', onMsg);
+    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+    return () => window.removeEventListener('message', onMsg);
+  }, []);
+
+  useEffect(() => {
+    if (quizOpen) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = '';
+  }, [quizOpen]);
+
+  return (
+    <div ref={scrollRef}>
+      <Nav onStartQuiz={() => setQuizOpen(true)} />
+      <Hero onStartQuiz={() => setQuizOpen(true)} headline={tweaks.headline} />
+      <Projects />
+      <Process />
+      <Testimonials />
+      <Credentials variant={tweaks.studioScale} />
+      <Services onStartQuiz={() => setQuizOpen(true)} />
+      <QuizBanner onStartQuiz={() => setQuizOpen(true)} />
+      <Footer />
+      <Quiz open={quizOpen} onClose={() => setQuizOpen(false)} />
+      <TweaksPanel tweaks={tweaks} setTweak={setTweak} visible={tweaksVisible} />
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('app')).render(<App />);
+</script>
+</body>
+</html>
