@@ -207,7 +207,7 @@ const PROJECTS = [
     placeholder: 'stone',
     photo: 'images/waterscapes-photo-4.webp',
     phLabel: 'WATER FEATURE — MOBILE RESIDENCE',
-    variant: 'asymmetric',
+    variant: 'standard',
     slug: 'custom-water-feature',
   },
 ];
