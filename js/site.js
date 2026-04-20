@@ -164,9 +164,9 @@ function Testimonials() {
 const PROJECTS = [
   {
     no: '001',
-    name: <>Lakeside <em>Rectangle</em></>,
+    name: <>A Backyard <em>Freeform</em></>,
     location: 'Daphne, Alabama',
-    desc: 'A rectangular pool with dark stamped concrete deck set against a lakeside lot in Daphne. Stone planter wall, long summer view to the water.',
+    desc: 'A freeform pool with attached spa, exposed aggregate coping, and a full concrete surround deck. Built for a family in Daphne who wanted a custom shape — not a kit.',
     meta: 'NEW BUILD · 2022 · AL',
     placeholder: 'water',
     photo: 'images/waterscapes-photo-2.jpg',
@@ -176,12 +176,12 @@ const PROJECTS = [
   },
   {
     no: '002',
-    name: <>A Liner <em>Pool</em></>,
+    name: <>A Dark Liner <em>Pool</em></>,
     location: 'Mobile, Alabama',
-    desc: 'A clean residential liner pool built for a Midtown Mobile family. Blue speckle liner, decorative tile border, brushed concrete coping. Built right, built to last.',
+    desc: 'A deep-blue vinyl liner pool with decorative tile border, set against a brick-surround patio in Midtown Mobile. Custom freeform shell, built right, built to last.',
     meta: 'NEW BUILD · 2023 · AL',
     placeholder: 'stone',
-    photo: 'images/waterscapes-photo-1.jpg',
+    photo: 'images/waterscapes-photo-5.jpg',
     phLabel: 'POOL — MIDTOWN MOBILE RESIDENCE',
     variant: 'sidebar',
     slug: 'paver-edge-pool',

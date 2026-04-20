@@ -487,15 +487,7 @@ body[data-show-placeholder] .hero-video-tag { display: flex; }
   z-index: 2;
 }
 .hero-eyebrow {
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 28px;
-  display: flex; align-items: center; gap: 14px;
-  text-shadow: -1px -1px 0 rgba(0,0,0,0.7), 1px -1px 0 rgba(0,0,0,0.7), -1px 1px 0 rgba(0,0,0,0.7), 1px 1px 0 rgba(0,0,0,0.7), 0 0 20px rgba(0,0,0,0.8);
+  display: none;
 }
 .hero-eyebrow::before {
   content: '';
