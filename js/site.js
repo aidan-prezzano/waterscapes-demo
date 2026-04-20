@@ -164,12 +164,12 @@ function Testimonials() {
 const PROJECTS = [
   {
     no: '001',
-    name: <>A Paver-Edge <em>Pool</em></>,
+    name: <>A Liner <em>Pool</em></>,
     location: 'Mobile, Alabama',
-    desc: 'A freeform gunite pool with custom paver deck, designed around a mature oak tree in a Midtown Mobile backyard. Pebble-tec finish, integrated step ledge.',
-    meta: 'NEW BUILD · 2024 · AL',
+    desc: 'A clean residential liner pool built for a Midtown Mobile family. Blue speckle liner, decorative tile border, brushed concrete coping. Built right, built to last.',
+    meta: 'NEW BUILD · 2023 · AL',
     placeholder: 'stone',
-    photo: 'https://waterscapesdesigns.com/wp-content/uploads/2017/02/DSC_0479-1024x680.jpg',
+    photo: 'images/waterscapes-photo-1.webp',
     phLabel: 'POOL — MIDTOWN MOBILE RESIDENCE',
     variant: 'standard',
     slug: 'paver-edge-pool',
@@ -178,35 +178,35 @@ const PROJECTS = [
     no: '002',
     name: <>Lakeside <em>Rectangle</em></>,
     location: 'Daphne, Alabama',
-    desc: 'A clean rectangular pool set into a sloped lot overlooking a retention pond in Daphne. Travertine coping, integrated spa, LED lighting throughout.',
-    meta: 'NEW BUILD · 2023 · AL',
+    desc: 'A rectangular pool with dark stamped concrete deck set against a lakeside lot in Daphne. Stone planter wall, long summer view to the water.',
+    meta: 'NEW BUILD · 2022 · AL',
     placeholder: 'water',
-    photo: 'https://waterscapesdesigns.com/wp-content/uploads/2017/02/DSC_0486-1024x680.jpg',
+    photo: 'images/waterscapes-photo-2.webp',
     phLabel: 'POOL — DAPHNE LAKESIDE',
     variant: 'sidebar',
     slug: 'lakeside-rectangle',
   },
   {
     no: '003',
-    name: <>Waterfront Pool &amp; <em>Spa</em></>,
-    location: 'Orange Beach, Alabama',
-    desc: 'A Gulf-facing pool and spa with vanishing edge, oriented to the water. Dark pebble finish reads as an extension of the Gulf beyond.',
+    name: <>A Family <em>Backyard Pool</em></>,
+    location: 'Spanish Fort, Alabama',
+    desc: 'A full-size rectangle with a diving board, built for a family in Spanish Fort. Vinyl liner, concrete deck, aluminum safety fence. A pool the whole neighborhood remembers.',
     meta: 'NEW BUILD · 2023 · AL',
     placeholder: 'dusk',
-    photo: 'https://waterscapesdesigns.com/wp-content/uploads/2017/02/DSC_0502-1024x680.jpg',
-    phLabel: 'POOL — ORANGE BEACH WATERFRONT',
+    photo: 'images/waterscapes-photo-3.webp',
+    phLabel: 'POOL — SPANISH FORT RESIDENCE',
     variant: 'overlay',
     slug: 'waterfront-pool',
   },
   {
     no: '004',
     name: <>Custom Water <em>Feature</em></>,
-    location: 'Spanish Fort, Alabama',
-    desc: 'A resort-style pool with rock waterfall, fire bowls, and full outdoor kitchen surround. The ultimate backyard escape in Spanish Fort.',
-    meta: 'NEW BUILD · 2022 · AL',
+    location: 'Mobile, Alabama',
+    desc: 'A stone waterfall feature added to an existing pool. Dual-blade cascade over a semicircular block wall. The pool was already there — the waterfall made it theirs.',
+    meta: 'RENOVATION · 2024 · AL',
     placeholder: 'stone',
-    photo: 'https://waterscapesdesigns.com/wp-content/uploads/2017/02/DSC_0522-1024x680.jpg',
-    phLabel: 'POOL — SPANISH FORT RESIDENCE',
+    photo: 'images/waterscapes-photo-4.webp',
+    phLabel: 'WATER FEATURE — MOBILE RESIDENCE',
     variant: 'asymmetric',
     slug: 'custom-water-feature',
   },
@@ -603,8 +603,8 @@ function Hero({ onStartQuiz, headline = 'serene', eyebrow = 'Custom Pool Builder
       </div>
 
       <div className="hero-bottom-right">
-        Featured — Midtown Mobile Residence<br/>
-        Alabama / 2024
+        Featured — Daphne Lakeside Residence<br/>
+        Alabama / 2022
       </div>
     </section>
   );
