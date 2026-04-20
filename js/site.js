@@ -212,124 +212,31 @@ const PROJECTS = [
   },
 ];
 
-function ProjectSidebar({ p, total }) {
+function ProjectCard({ p, total, imageFirst }) {
   return (
-    <article className={`project variant-sidebar`}>
-      <div className="project-sidebar reveal">
-        <div className="mono" style={{ color: 'var(--mute)', marginBottom: 32 }}>
-          {p.no} / {String(total).padStart(3, '0')}
-        </div>
-        <h3 className="project-name" style={{ marginBottom: 24 }}>
-          {p.name}
-          <span className="loc">{p.location}</span>
-        </h3>
-        <p className="project-desc" style={{ marginBottom: 24 }}>{p.desc}</p>
-        <div style={{
-          fontFamily: 'Inter, sans-serif', fontSize: 10, letterSpacing: '0.22em',
-          textTransform: 'uppercase', color: 'var(--mute)', fontWeight: 500, marginBottom: 20,
-        }}>{p.meta}</div>
-        <a href={`project-${p.slug}.html`} className="btn-ghost" style={{ fontSize: 10.5 }}>
-          <span>View project</span><span className="arrow">→</span>
-        </a>
-      </div>
-      <div className="project-frame-wrap">
-        <div className="project-frame reveal">
+    <article className={`project-card${imageFirst ? '' : ' text-first'}`}>
+      <div className="pc-image reveal">
+        <div className="project-frame">
           <Parallax speed={0.12}>
-            <div className={`ph ph-${p.placeholder}`} style={p.photo ? { backgroundImage: `url(${p.photo})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}}>
+            <div
+              className={`ph ph-${p.placeholder}`}
+              style={p.photo ? { backgroundImage: `url(${p.photo})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}}
+            >
               <div className="ph-label">{p.phLabel}</div>
             </div>
           </Parallax>
         </div>
       </div>
-    </article>
-  );
-}
-
-function ProjectOverlay({ p, total }) {
-  return (
-    <article className="project variant-overlay">
-      <div className="project-frame reveal">
-        <Parallax speed={0.12}>
-          <div className={`ph ph-${p.placeholder}`} style={p.photo ? { backgroundImage: `url(${p.photo})`, backgroundSize: 'cover', backgroundPosition: 'center top' } : {}}>
-            <div className="ph-label">{p.phLabel}</div>
-          </div>
-        </Parallax>
-      </div>
-      <div className="project-caption" style={{ gridTemplateColumns: '180px 1fr 300px' }}>
-        <div className="no reveal">{p.no} / {String(total).padStart(3, '0')}</div>
-        <div className="reveal">
-          <h3 className="project-name">
-            {p.name}
-            <span className="loc">{p.location}</span>
-          </h3>
-        </div>
-        <div className="project-desc reveal">
+      <div className="pc-text reveal">
+        <div className="mono pc-no">{p.no} / {String(total).padStart(3, '0')}</div>
+        <h3 className="project-name">{p.name}<span className="loc">{p.location}</span></h3>
+        <p className="project-desc">
           {p.desc}
           <span className="meta">{p.meta}</span>
-          <a href={`project-${p.slug}.html`} className="btn-ghost" style={{ fontSize: 10.5, marginTop: 20 }}>
-            <span>View project</span><span className="arrow">→</span>
-          </a>
-        </div>
-      </div>
-    </article>
-  );
-}
-
-function ProjectAsymmetric({ p, total }) {
-  return (
-    <article className="project variant-asymmetric">
-      <div className="project-frame reveal">
-        <Parallax speed={0.12}>
-          <div className={`ph ph-${p.placeholder}`} style={p.photo ? { backgroundImage: `url(${p.photo})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}}>
-            <div className="ph-label">{p.phLabel}</div>
-          </div>
-        </Parallax>
-      </div>
-      <div className="project-caption">
-        <div className="no reveal">{p.no} / {String(total).padStart(3, '0')}</div>
-        <div className="reveal">
-          <h3 className="project-name">
-            {p.name}
-            <span className="loc">{p.location}</span>
-          </h3>
-        </div>
-        <div className="project-desc reveal">
-          {p.desc}
-          <span className="meta">{p.meta}</span>
-          <a href={`project-${p.slug}.html`} className="btn-ghost" style={{ fontSize: 10.5, marginTop: 20 }}>
-            <span>View project</span><span className="arrow">→</span>
-          </a>
-        </div>
-      </div>
-    </article>
-  );
-}
-
-function ProjectStandard({ p, total }) {
-  return (
-    <article className="project">
-      <div className="project-frame reveal">
-        <Parallax speed={0.12}>
-          <div className={`ph ph-${p.placeholder}`} style={p.photo ? { backgroundImage: `url(${p.photo})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}}>
-            <div className="ph-label">{p.phLabel}</div>
-          </div>
-        </Parallax>
-      </div>
-      <div className="project-caption">
-        <div className="no reveal">{p.no} / {String(total).padStart(3, '0')}</div>
-        <div className="reveal">
-          <h3 className="project-name">
-            {p.name}
-            <span className="loc">{p.location}</span>
-          </h3>
-        </div>
-        <div className="project-desc reveal">
-          {p.desc}
-          <span className="meta">{p.meta}</span>
-          <a href={`project-${p.slug}.html`} className="btn-ghost" style={{ fontSize: 10.5, marginTop: 20 }}>
-            <span>View project</span><span className="arrow">→</span>
-          </a>
-        </div>
+        </p>
+        <a href={`project-${p.slug}.html`} className="btn-ghost" style={{ fontSize: 10.5, marginTop: 24 }}>
+          <span>View project</span><span className="arrow">→</span>
+        </a>
       </div>
     </article>
   );
@@ -347,14 +254,9 @@ function Projects() {
       </div>
 
       <div className="projects-stack">
-        {PROJECTS.map((p) => {
-          const Comp = {
-            sidebar: ProjectSidebar,
-            overlay: ProjectOverlay,
-            asymmetric: ProjectAsymmetric,
-          }[p.variant] || ProjectStandard;
-          return <Comp key={p.no} p={p} total={PROJECTS.length} />;
-        })}
+        {PROJECTS.map((p, i) => (
+          <ProjectCard key={p.no} p={p} total={PROJECTS.length} imageFirst={i % 2 !== 0} />
+        ))}
       </div>
 
       <div className="projects-cta" style={{ padding: '40px 40px 80px', borderTop: '1px solid var(--line)', textAlign: 'center' }}>
