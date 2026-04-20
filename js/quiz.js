@@ -82,7 +82,7 @@ const QUIZ_STEPS = [
     key: 'timeline',
     eyebrow: 'Step 05 — Timing',
     question: <>When do you imagine <em>breaking ground?</em></>,
-    helper: 'Shoreline projects typically take 6–14 months from discovery to dive.',
+    helper: 'Waterscapes projects typically take 6–12 months from discovery to first swim.',
     placeholder: 'stone',
     placeholderLabel: 'TIMELINE — STUDIES',
     options: [
@@ -386,7 +386,7 @@ function QuizComplete({ answers, onClose, onReset, isMobile }) {
           to schedule a discovery conversation. Expect a quiet, unhurried process from here.
         </p>
         <button className="btn-ghost" onClick={onClose}>
-          <span>Return to Shoreline</span><span className="arrow">→</span>
+          <span>Return to Waterscapes</span><span className="arrow">→</span>
         </button>
         <button
           className="btn-ghost"
@@ -528,7 +528,7 @@ function Quiz({ open, onClose }) {
         padding: isMobile ? '16px 20px' : '24px 40px',
         borderBottom: '1px solid var(--line)',
       }}>
-        <div className="logo" style={{ fontSize: 18 }}>SHORELINE</div>
+        <div className="logo" style={{ fontSize: 18 }}>WATERSCAPES</div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 40 }}>
           {!complete && (
             <div className="mono" style={{ color: 'var(--mute)' }}>
