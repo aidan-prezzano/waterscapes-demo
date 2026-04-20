@@ -133,7 +133,7 @@ function Testimonials() {
               className={i === idx ? 'active' : ''}
               onClick={() => setIdx(i)}
             >
-              {String(i + 1).padStart(2, '0')} {item.location.split(',')[0]}
+              {String(i + 1).padStart(2, '0')} {item.author.split(/\s+/)[0]}
             </button>
           ))}
         </div>
@@ -358,7 +358,7 @@ function Projects() {
       </div>
 
       <div className="projects-cta" style={{ padding: '40px 40px 80px', borderTop: '1px solid var(--line)', textAlign: 'center' }}>
-        <a href="project-courtyard-pool.html" className="btn-ghost">
+        <a href="project-lakeside-rectangle.html" className="btn-ghost">
           <span>Open case study</span><span className="arrow">→</span>
         </a>
       </div>
