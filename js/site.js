@@ -164,18 +164,6 @@ function Testimonials() {
 const PROJECTS = [
   {
     no: '001',
-    name: <>A Liner <em>Pool</em></>,
-    location: 'Mobile, Alabama',
-    desc: 'A clean residential liner pool built for a Midtown Mobile family. Blue speckle liner, decorative tile border, brushed concrete coping. Built right, built to last.',
-    meta: 'NEW BUILD · 2023 · AL',
-    placeholder: 'stone',
-    photo: 'images/waterscapes-photo-1.webp',
-    phLabel: 'POOL — MIDTOWN MOBILE RESIDENCE',
-    variant: 'standard',
-    slug: 'paver-edge-pool',
-  },
-  {
-    no: '002',
     name: <>Lakeside <em>Rectangle</em></>,
     location: 'Daphne, Alabama',
     desc: 'A rectangular pool with dark stamped concrete deck set against a lakeside lot in Daphne. Stone planter wall, long summer view to the water.',
@@ -183,8 +171,20 @@ const PROJECTS = [
     placeholder: 'water',
     photo: 'images/waterscapes-photo-2.webp',
     phLabel: 'POOL — DAPHNE LAKESIDE',
-    variant: 'sidebar',
+    variant: 'standard',
     slug: 'lakeside-rectangle',
+  },
+  {
+    no: '002',
+    name: <>A Liner <em>Pool</em></>,
+    location: 'Mobile, Alabama',
+    desc: 'A clean residential liner pool built for a Midtown Mobile family. Blue speckle liner, decorative tile border, brushed concrete coping. Built right, built to last.',
+    meta: 'NEW BUILD · 2023 · AL',
+    placeholder: 'stone',
+    photo: 'images/waterscapes-photo-1.webp',
+    phLabel: 'POOL — MIDTOWN MOBILE RESIDENCE',
+    variant: 'sidebar',
+    slug: 'paver-edge-pool',
   },
   {
     no: '003',
@@ -503,7 +503,7 @@ const SERVICES = [
       'Paver deck, landscaping & LED lighting',
     ],
     placeholder: 'water',
-    photo: 'https://waterscapesdesigns.com/wp-content/uploads/2017/02/DSC_0509-1024x680.jpg',
+    photo: 'images/waterscapes-photo-2.webp',
     phLabel: 'SERVICE — CUSTOM BUILDS',
   },
   {
@@ -517,7 +517,7 @@ const SERVICES = [
       'Paver and landscape reset',
     ],
     placeholder: 'stone',
-    photo: 'https://waterscapesdesigns.com/wp-content/uploads/2017/02/DSC_0529-1024x680.jpg',
+    photo: 'images/waterscapes-photo-4.webp',
     phLabel: 'SERVICE — RENOVATIONS',
   },
 ];
