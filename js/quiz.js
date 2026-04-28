@@ -567,7 +567,7 @@ function Quiz({ open, onClose }) {
             key={stepIdx}
             style={{
               display: 'grid',
-              gridTemplateColumns: isMobile ? '1fr' : '1.1fr 1fr',
+              gridTemplateColumns: '1fr',
               height: '100%',
               animation: `quiz-enter 700ms cubic-bezier(0.16, 1, 0.3, 1)`,
             }}
@@ -578,6 +578,9 @@ function Quiz({ open, onClose }) {
               flexDirection: 'column',
               justifyContent: isMobile ? 'flex-start' : 'center',
               overflowY: 'auto',
+              maxWidth: isMobile ? 'none' : 880,
+              margin: '0 auto',
+              width: '100%',
             }}>
               <div className="label" style={{ color: 'var(--mute)', marginBottom: isMobile ? 20 : 40 }}>
                 {step.eyebrow}
@@ -626,31 +629,6 @@ function Quiz({ open, onClose }) {
               )}
             </div>
 
-            {!isMobile && <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--bg-3)' }}>
-              <div
-                className={`ph ph-${step.placeholder}`}
-                style={{
-                  position: 'absolute', inset: '-4% 0',
-                  animation: 'quiz-img-enter 1100ms cubic-bezier(0.16, 1, 0.3, 1)',
-                  width: '100%', height: '108%',
-                }}
-              >
-                <div className="ph-label">{step.placeholderLabel}</div>
-              </div>
-              <div style={{
-                position: 'absolute',
-                top: 40, right: 40,
-                color: 'rgba(255,255,255,0.8)',
-                fontFamily: "'Cormorant Garamond', serif",
-                fontStyle: 'italic',
-                fontWeight: 300,
-                fontSize: 180,
-                lineHeight: 1,
-                letterSpacing: '-0.04em',
-              }}>
-                {String(stepIdx + 1).padStart(2, '0')}
-              </div>
-            </div>}
           </div>
         )}
       </div>
